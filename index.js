@@ -6,7 +6,10 @@ let React = {
       el.setAttribute(key, attribute[key])
     }
 
-    for (const child of children) {
+    for (let child of children) {
+      if (typeof child === 'string') {
+        child = document.createTextNode(child)
+      }
       el.appendChild(child)
     }
 
