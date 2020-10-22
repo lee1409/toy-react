@@ -1,3 +1,4 @@
 import { React, ReactDOM } from './toy-react'
+import App from './app'
 
-ReactDOM.render(<div><div>Hello</div></div>, document.body)
+ReactDOM.render(<App></App>, document.getElementById('App'))
