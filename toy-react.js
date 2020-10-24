@@ -10,17 +10,17 @@ class ElementWrapper {
   appendChild(child) {
     this._root.appendChild(child.root);
   }
-  get root () {
-    return this._root
+  get root() {
+    return this._root;
   }
 }
 
 class TextWrapper {
   constructor(text) {
-    this._root = document.createTextNode(text)
+    this._root = document.createTextNode(text);
   }
-  get root () {
-    return this._root
+  get root() {
+    return this._root;
   }
 }
 
@@ -36,18 +36,18 @@ React.Component = class {
   }
 
   appendChild(child) {
-    this.children.push(child)
+    this.children.push(child);
   }
 
-  get root () {
+  get root() {
     if (!this._root) this._root = this.render().root;
-    return this._root
+    return this._root;
   }
-}
+};
 
 export const React = {
   createElement(type, attribute, ...children) {
-    let el = typeof type !== "string" ? new type : new ElementWrapper(type);
+    let el = typeof type !== "string" ? new type() : new ElementWrapper(type);
 
     // 2nd step we need to set attribute
     for (const key in attribute) {
@@ -58,17 +58,17 @@ export const React = {
     let insertChildren = (children) => {
       for (let child of children) {
         if (typeof child === "string") {
-          child = new TextWrapper(child)
+          child = new TextWrapper(child);
         }
         if (Array.isArray(child)) {
-          insertChildren(child)
+          insertChildren(child);
         } else {
-          el.appendChild(child)
+          el.appendChild(child);
         }
       }
-    }
+    };
 
-    insertChildren(children)
+    insertChildren(children);
 
     return el;
   },

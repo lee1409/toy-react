@@ -1,22 +1,21 @@
-import {React} from './toy-react'
-
+import { React } from "./toy-react";
 
 class App extends React.Component {
   render() {
-    return <div>
-      <div>Hello World</div>
-      <div>Hello World</div>
-      <div>Hello World</div>
-      <div>Hello World</div>
+    return (
       <div>
+        <div>Hello World</div>
+        <div>Hello World</div>
+        <div>Hello World</div>
+        <div>Hello World</div>
         <div>
           <div>
-            Hello
+            <div>Hello</div>
           </div>
         </div>
       </div>
-    </div>
+    );
   }
 }
 
-export default App
+export default App;
