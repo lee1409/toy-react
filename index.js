@@ -1,4 +1,6 @@
 import { React, ReactDOM } from "./toy-react";
-import App from "./app";
+import { Game } from "./app";
 
-ReactDOM.render(<App></App>, document.getElementById("App"));
+// ========================================
+
+ReactDOM.render(<Game />, document.getElementById("App"));
