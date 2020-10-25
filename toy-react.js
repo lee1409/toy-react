@@ -30,7 +30,7 @@ class Component {
     let isSameNode = (oldNode, newNode) => {
       if (oldNode.type !== newNode.type) return false;
       for (let name in newNode.props) {
-        if (newNode[name] !== oldNode.props[name]) {
+        if (newNode.props[name] !== oldNode.props[name]) {
           return false;
         }
       }
@@ -61,8 +61,8 @@ class Component {
 
       for (let i = 0; i < newChildren.length; i++) {
         let newChild = newChildren[i];
-        let oldChild = oldChild[i];
-        if (i < oldChild.length) {
+        let oldChild = oldChildren[i];
+        if (i < oldChildren.length) {
           update(oldChild, newChild);
         } else {
           // Get the range and add newChildren
